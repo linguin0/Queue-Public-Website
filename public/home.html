@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <style>
   body {
-    color: black;
+    color: #0D1F2D;
     font-family: Verdana;
   }
   h1 {
@@ -45,7 +45,7 @@
   .blog-title {
     text-align: center;
     font-size: 30px;
-    color: solid black;
+    color: solid #0D1F2D;
     text-decoration-style: solid;
     font-family: 'Boldonse';
     padding-bottom: 20px;
@@ -91,10 +91,6 @@
     <link href='https://fonts.googleapis.com/css?family=Boldonse' rel='stylesheet'>
   </head>
   <script>
-    async function loadFunctions() {
-      displayBlogPosts()
-    }
-
     async function displayBlogPosts() {
       var blog_posts = await fetch("blog.json")
         .then(response => {
@@ -103,11 +99,11 @@
       var values = Object.values(blog_posts).reverse()
       for (var i = 0; i < values.length; i++) {
         let data = values[i];
-        document.getElementById("blog-posts").innerHTML += '<div class="blog-post-content"><p id="blog-post-date">' + data.date + '</p><p id="blog-post-title">' + data.title + '</p><p>' + data.text + '</p></div>'
+        document.getElementById("blog-posts").innerHTML += '<div class="blog-post-content"><p id="blog-post-date">' + data.date + '</p><p id="blog-post-title">' + data.title + '</p><p>' + data.text + '</p></div><br>'
       }
     }
   </script>
-  <body style="background-color:#546A7B" onload="loadFunctions()">
+  <body style="background-color:#546A7B" onload="displayBlogPosts()">
     <h1>QUEUE PUBLIC</h1>
 
     <div class="main-content">
@@ -128,7 +124,7 @@
       </div>
       
       <div class="player-content">
-        hi
+        <p> Music player </p>
       </div>
       
     </div>
