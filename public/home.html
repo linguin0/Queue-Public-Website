@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <style>
   body {
-    color: black;
+    color: #0D1F2D;
     font-family: Verdana;
   }
   h1 {
@@ -40,13 +40,15 @@
     border: 5px solid #0D1F2D;
     padding: 20px;
     background-color: #C3C8D4;
+    overflow-y: auto;
   }
   .blog-title {
     text-align: center;
     font-size: 30px;
-    color: solid black;
+    color: solid #0D1F2D;
     text-decoration-style: solid;
     font-family: 'Boldonse';
+    padding-bottom: 20px;
   }
   .player-content {
     justify-content: center;
@@ -57,7 +59,26 @@
     padding: 20px;
     background-color: #9EA3B0;
   }
+  .blog-post-content {
+    justify-content: center;
+    border: 2px solid #0D1F2D;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+    padding-top: 5px;
+  }
+  #blog-post-date {
+    color: solid black;
+    text-decoration-style: solid;
+    font-family: 'Courier New';
+  }
+  #blog-post-title {
+    color: solid black;
+    text-decoration-style: solid;
+    font-family: 'Boldonse';
+  }
 </style>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -69,8 +90,20 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <link href='https://fonts.googleapis.com/css?family=Boldonse' rel='stylesheet'>
   </head>
-  
-  <body style="background-color:#546A7B">
+  <script>
+    async function displayBlogPosts() {
+      var blog_posts = await fetch("blog.json")
+        .then(response => {
+          return response.json()
+        })
+      var values = Object.values(blog_posts).reverse()
+      for (var i = 0; i < values.length; i++) {
+        let data = values[i];
+        document.getElementById("blog-posts").innerHTML += '<div class="blog-post-content"><p id="blog-post-date">' + data.date + '</p><p id="blog-post-title">' + data.title + '</p><p>' + data.text + '</p></div><br>'
+      }
+    }
+  </script>
+  <body style="background-color:#546A7B" onload="displayBlogPosts()">
     <h1>QUEUE PUBLIC</h1>
 
     <div class="main-content">
@@ -84,10 +117,14 @@
       
       <div class="blog-content">
         <div class="blog-title">blog</div>
+
+        <div class="blog-scroll-content">
+          <div id="blog-posts"></div>
+        </div>
       </div>
       
       <div class="player-content">
-        hi
+        <p> Music player </p>
       </div>
       
     </div>
