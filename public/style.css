@@ -1,3 +1,62 @@
 /* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
    HTML content. To learn how to do something, just try searching Google for questions like
    "how to change link color." */
+body {
+    color: #0D1F2D;
+    font-family: Verdana;
+  }
+h1 {
+   text-align: center;
+   font-size: 50px;
+   color: white;
+   font-family: 'Boldonse';
+}
+.main-content {
+   display: flex;
+   justify-content: center;
+   height: 400px;
+   padding-left: 20px;
+   padding-right: 20px;
+   gap: 10px;
+}
+.nav-bar {
+   justify-content: center;
+   align-items: center;
+   width: 150px;
+   border-radius: 25px;
+   border: 5px solid #0D1F2D;
+   padding: 20px;
+   background-color: #9EA3B0;
+   font-family: 'Boldonse';
+}
+.nav-bar a {
+   color: #0D1F2D;
+   text-decoration: none;
+}
+.player-content {
+   justify-content: center;
+   align-items: center;
+   width: 250px;
+   border-radius: 25px;
+   border: 5px solid #0D1F2D;
+   padding: 20px;
+   background-color: #9EA3B0;
+}
+.blog-content {
+   justify-content: center;
+   align-items: center;
+   width: 750px;
+   border-radius: 25px;
+   border: 5px solid #0D1F2D;
+   padding: 20px;
+   background-color: #C3C8D4;
+   overflow-y: auto;
+}
+.blog-title {
+   text-align: center;
+   font-size: 30px;
+   color: solid #0D1F2D;
+   text-decoration-style: solid;
+   font-family: 'Boldonse';
+   padding-bottom: 20px;
+}
