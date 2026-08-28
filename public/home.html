@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <style>
-  .blog-content {
-    justify-content: center;
-    align-items: center;
-    width: 750px;
-    border-radius: 25px;
-    border: 5px solid #0D1F2D;
-    padding: 20px;
-    background-color: #C3C8D4;
-    overflow-y: auto;
-  }
-  .blog-title {
-    text-align: center;
-    font-size: 30px;
-    color: solid #0D1F2D;
-    text-decoration-style: solid;
-    font-family: 'Boldonse';
-    padding-bottom: 20px;
-  }
+  
   .blog-post-content {
     justify-content: center;
     border: 2px solid #0D1F2D;
@@ -51,7 +34,7 @@
   </head>
   <script>
     async function displayBlogPosts() {
-      var blog_posts = await fetch("blog.json")
+      var blog_posts = await fetch("static/blog.json")
         .then(response => {
           return response.json()
         })
